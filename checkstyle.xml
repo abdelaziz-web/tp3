@@ -23,7 +23,7 @@
 
 
 
-        
+
         <!-- Checks for imports -->
         <module name="AvoidStarImport"/>
         <module name="IllegalImport"/>

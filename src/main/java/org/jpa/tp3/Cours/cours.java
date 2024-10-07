@@ -19,5 +19,7 @@ public class cours {
     private String description;
     @ManyToOne
     private Module module;
+    // private int new fields
+    // Abdelaziz Update and Qualite logiciele
 
     }

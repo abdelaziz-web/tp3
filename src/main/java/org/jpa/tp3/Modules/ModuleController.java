@@ -17,6 +17,7 @@ public class ModuleController {
 
     @RequestMapping("/modules")
     public List<Module> getModules() {
+
         return moduleService.getModules();
     }
 
