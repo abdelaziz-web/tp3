@@ -20,6 +20,10 @@
         <module name="StaticVariableName"/>
         <module name="TypeName"/>
 
+
+
+
+        
         <!-- Checks for imports -->
         <module name="AvoidStarImport"/>
         <module name="IllegalImport"/>
