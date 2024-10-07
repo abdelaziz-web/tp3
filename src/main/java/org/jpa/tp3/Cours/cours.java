@@ -1,26 +1,23 @@
-package org.jpa.tp3.Modules ;
+package org.jpa.tp3.Cours ;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import org.jpa.tp3.Modules.Module ;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity
-public class Module {
-
+public class cours {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String nom;
     private String description;
-    
-}
+    @ManyToOne
+    private Module module;
 
-
-
+    }
