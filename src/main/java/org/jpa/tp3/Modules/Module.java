@@ -20,8 +20,7 @@ public class Module {
     private String nom;
     private String description;
 
-    //it don't still, don't still
-    
+
 }
 
 
