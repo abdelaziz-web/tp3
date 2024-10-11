@@ -22,7 +22,7 @@ pipeline {
         stage('Scan') {
             steps {
                 withSonarQubeEnv('SonarQube') { // Correctly closes within this block
-                    bat 'mvn clean verify sonar:sonar -Dsonar.projectKey=jenkins -Dsonar.projectName='jenkins'' // This is the standard command for SonarQube scanning with Maven
+                     bat "mvn clean verify sonar:sonar -Dsonar.projectKey=jenkins -Dsonar.projectName='jenkins'"
                 }
             }
         }
