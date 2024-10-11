@@ -6,7 +6,6 @@ pipeline {
         maven 'maven'
     }
 
-
     stages {
         stage('Checkout') {
             steps {
@@ -22,11 +21,11 @@ pipeline {
 
         stage('Scan') {
             steps {
-                withSonarQubeEnv (installationName: 'SonarQube') {
-                   sh './mvnw clean org.sonarsource.scanner.maven: sonar-maven-plugin:3.9.0.2155:sonar'  
-                       }
-                    }
-                  {
+                withSonarQubeEnv('SonarQube') { // Correctly closes within this block
+                    sh 'mvn sonar:sonar' // This is the standard command for SonarQube scanning with Maven
+                }
+            }
+        }
 
         stage('Test') {
             steps {
