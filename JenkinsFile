@@ -19,6 +19,19 @@ pipeline {
             }
         }
 
+        stage('SonarQube Scan') {
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                    bat """
+                    mvn sonar:sonar \
+                    -Dsonar.projectKey=your-project-key \
+                    -Dsonar.host.url=http://localhost:9000 \
+                    -Dsonar.login=your-sonarqube-token
+                    """  // Use triple quotes for multi-line commands
+                }
+            }
+        }
+
         stage('Test') {
             steps {
                 bat 'mvn test'
