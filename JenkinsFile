@@ -15,12 +15,20 @@ pipeline {
                 checkout scm
             }
         }
-
+       
         stage('Build') {
             steps {
                 bat 'mvn clean package'
             }
         }
+
+        stage('Scan') {
+            steps {
+                withSonarQubeEnv (installationName: 'SonarQube') {
+                   sh './mvnw clean org.sonarsource.scanner.maven: sonar-maven-plugin:3.9.0.2155:sonar'  
+                       }
+                    }
+                  {
 
         stage('Test') {
             steps {
